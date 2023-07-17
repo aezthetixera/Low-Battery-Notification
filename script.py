@@ -5,6 +5,7 @@ from plyer import notification
 from playsound import playsound
 import time
 
+
 battery = psutil.sensors_battery()
 is_plugged = battery.power_plugged
 AlreadyNotifiedLow = False
@@ -12,7 +13,7 @@ AlreadyNotifiedHigh = False
 
 
 def sound():
-    playsound(r"C:\Users\Lunarciez\PycharmProjects\Low-Battery-Notification\files\notify.mp3")
+    playsound(r"files\notify.mp3")
 
 
 def notification_low():
