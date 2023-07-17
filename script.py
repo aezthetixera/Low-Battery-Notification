@@ -41,12 +41,12 @@ while True:
     elif battery.percent <= 20 and is_plugged is True and AlreadyNotifiedLow is True:
         AlreadyNotifiedLow = False
 
-    elif battery.percent >= 50 and is_plugged is True and AlreadyNotifiedHigh is False:
+    elif battery.percent >= 80 and is_plugged is True and AlreadyNotifiedHigh is False:
         Thread(target=sound).start()
         Thread(target=notification_high).start()
         print("battery high notification started.")
         AlreadyNotifiedHigh = True
-    elif battery.percent >= 50 and is_plugged is False and AlreadyNotifiedHigh is True:
+    elif battery.percent >= 80 and is_plugged is False and AlreadyNotifiedHigh is True:
         AlreadyNotifiedHigh = False
 
     battery = psutil.sensors_battery()
